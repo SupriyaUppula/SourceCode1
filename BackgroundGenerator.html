@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            transition: background-image 0.5s;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #ff0015;
+            color: turquoise;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+    <title>Background Generator</title>
+</head>
+<body style="background-image: url('https://res.cloudinary.com/dcdtsvzys/image/upload/v1695281317/Thailand-Waterfalls-The-Beauty-Of-Nature-Landscape-HD-Wallpapers-Tablets-And-Mobile-Phones-Free-Download-For-Desktop_sftvtr.jpg');">
+    <header>
+        <h1>Background Generator</h1>
+    </header>
+    <main>
+        <div class="button-container">
+            <button id="change-background">Change Background</button>
+        </div>
+    </main>
+    <script>
+        const backgroundImages = [
+            'https://res.cloudinary.com/dcdtsvzys/image/upload/v1695281226/857538-free-latest-nature-wallpapers-2018-hd-1920x1200-samsung_fmodxe.jpg',
+            'https://res.cloudinary.com/dcdtsvzys/image/upload/v1695281013/nature-background_pnoa3g.jpg',
+            'https://res.cloudinary.com/dcdtsvzys/image/upload/v1695281107/maxresdefault_ihtpbr.jpg',
+            'https://res.cloudinary.com/dcdtsvzys/image/upload/v1679825969/samples/landscapes/beach-boat.jpg'
+        ];
+
+        const changeBackgroundButton = document.getElementById('change-background');
+        let currentBackgroundIndex = 0;
+
+        changeBackgroundButton.addEventListener('click', () => {
+            currentBackgroundIndex = (currentBackgroundIndex + 1) % backgroundImages.length;
+            const newBackgroundImage = backgroundImages[currentBackgroundIndex];
+            document.body.style.backgroundImage = `url('${newBackgroundImage}')`;
+        });
+    </script>
+</body>
+</html>
